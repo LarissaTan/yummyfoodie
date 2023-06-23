@@ -10,6 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodPlan">
         <activity
+            android:name=".Comment"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Login"
             android:exported="false"
             android:label="@string/title_activity_login"
@@ -23,7 +30,8 @@
         <activity android:name=".InfoListActivity" />
         <activity android:name=".Home" />
         <activity android:name=".Register" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
