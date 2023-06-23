@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Menu"
+        android:id="@+id/nav_caipu"
+        android:icon="@drawable/nav_caipu1"/>
+
+    <item android:title="Vegetables"
+        android:id="@+id/nav_shucai"
+        android:icon="@drawable/nav_shucai1"/>
+</menu>
