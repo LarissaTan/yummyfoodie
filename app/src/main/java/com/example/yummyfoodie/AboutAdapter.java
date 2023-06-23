@@ -34,6 +34,7 @@ public class AboutAdapter extends PagerAdapter {
         return view;
     }
 
+
     @Override
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
         View view = viewList.get(position%viewList.size());
