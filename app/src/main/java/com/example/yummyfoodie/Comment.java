@@ -80,9 +80,8 @@ public class Comment extends AppCompatActivity {
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setClass(view.getContext(),Home.class);
+            public void onClick(View v) {
+                finish();
             }
         });
     }
