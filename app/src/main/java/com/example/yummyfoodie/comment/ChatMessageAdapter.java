@@ -121,7 +121,6 @@ public class ChatMessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     public void refreshMessages(){
         initData();
-       notifyDataSetChanged();
     }
 
     private void initData(){

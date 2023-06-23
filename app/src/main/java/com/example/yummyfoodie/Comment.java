@@ -5,12 +5,14 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.example.yummyfoodie.bean.ChatMessageBean;
 import com.example.yummyfoodie.comment.ChatMessageAdapter;
@@ -26,12 +28,13 @@ public class Comment extends AppCompatActivity {
     private EditText et_chat_message;
     private Button btn_message_send;
     private String messages;
+    private ImageView back;
     private ChatMessageBean chatMessageBean;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_store_comment_fragment);
+        setContentView(R.layout.activity_comment);
     }
 
     @Override
@@ -50,6 +53,7 @@ public class Comment extends AppCompatActivity {
         rv_Chat = findViewById(R.id.rv_chat);
         et_chat_message = findViewById(R.id.et_chat_message);
         btn_message_send = findViewById(R.id.btn_message_send);
+        back = findViewById(R.id.back_com);
         messages = et_chat_message.getText().toString();
 
 
@@ -68,7 +72,17 @@ public class Comment extends AppCompatActivity {
                     Log.i("chat","empty");
                 } else {
                     chatMessageBean = new ChatMessageBean(messages, Home.username, DateUtill.getCurrentTime());
+                    new SQlite(view.getContext()).addMsg(messages,Home.username, DateUtill.getCurrentTime());
+                    adapter.refreshMessages();
                 }
+            }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(view.getContext(),Home.class);
             }
         });
     }

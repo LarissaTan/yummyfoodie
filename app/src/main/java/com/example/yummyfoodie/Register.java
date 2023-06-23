@@ -38,7 +38,7 @@ public class Register extends AppCompatActivity {
             back.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(Register.this,MainActivity.class);
+                    Intent intent = new Intent(Register.this,Login.class);
                     startActivity(intent);
                     finish();
                 }
@@ -50,7 +50,7 @@ public class Register extends AppCompatActivity {
                     String password = userpassword.getText().toString().trim();
                     if(!TextUtils.isEmpty(name)&&!TextUtils.isEmpty(password)){
                         mSQlite.add(name,password);
-                        Intent intent1 = new Intent(Register.this,MainActivity.class);
+                        Intent intent1 = new Intent(Register.this,Login.class);
                         startActivity(intent1);
                         SharedPreferences preferences = getSharedPreferences("name", MODE_PRIVATE);
                         SharedPreferences.Editor edit = preferences.edit();
@@ -66,7 +66,7 @@ public class Register extends AppCompatActivity {
 
 
 
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, Login.class);
             PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
 
 

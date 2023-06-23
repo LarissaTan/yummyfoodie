@@ -17,8 +17,10 @@ public class Home extends AppCompatActivity {
         // 获取传递的Intent
         Intent intent = getIntent();
 
-        // 提取username和password的值
-        username = intent.getStringExtra("username");
+
+        // 提取username
+        if(username == null)
+            username = intent.getStringExtra("username");
     }
 
     public void onClick(View view) {
@@ -32,6 +34,7 @@ public class Home extends AppCompatActivity {
                 break;
             case R.id.btn3:
                 intent.setClass(this,Comment.class);
+                break;
         }
         startActivity(intent);
     }
